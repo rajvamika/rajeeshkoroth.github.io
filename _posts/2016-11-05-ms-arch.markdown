@@ -5,7 +5,7 @@ date:   2016-11-03 08:36:28 +0530
 categories: jekyll update
 ---
 
-Microservice is not a new concept. The Unix philosophy of one tool, one job and does it well. The SOA world has shown the integration of large desperate systems using ESB. The prominence of Microservice are due to the fact that Cloud adoption, need for real time systems like in BigData an IoT projects.
+Microservice is not a new concept. The Unix philosophy of one tool, one job and it does it well. The SOA world has shown the integration of large desperate systems using ESB. The prominence of Microservice are due to the fact that Cloud adoption, need for real time systems like in BigData an IoT projects.
 
 The first and foremost attribute of Microservices implementation is to identify the problem domain which can be called as Domain Driven Design. Traditional agile software development focus on the Application development practices rather than understanding the problem domain initially. The developers identifies the task to work on based on User Stories and Use Case aggregation exercise.
 
