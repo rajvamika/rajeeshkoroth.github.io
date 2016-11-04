@@ -31,3 +31,6 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+includes_dir     : _includes
+fbcomments: yes
+fb_appid: 320288511690108

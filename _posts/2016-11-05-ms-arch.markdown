@@ -5,39 +5,53 @@ date:   2016-11-04 08:36:28 +0530
 categories: jekyll update
 ---
 
-Microservice is not a new concept. The Unix philosophy of one tool, one job and perform its job well is inherent to its utility tools and commands. The same rules applied to `functions`; an ubiqutous `organization block` since computing; which states that function should be as small as possible and should do only what the `function name` denotes. When SOA and ESB came in integration space, it has clearly defined set of rules. Most of those rules are applicable for Microservices as well. However, the current prominence of Microservice are due to massive Cloud adoption, a need for real time systems in BigData related projects and IoT applications.
+Microservice is not a new concept. The Unix philosophy of one tool, one job and perform its job well is inherent to its utility tools and commands. The same rules applies to `functions`; an ubiqutous `organization block` in programming languages; which states that function should be as small to do one job at a time and should do only what the `function name` denotes. When SOA and ESB came in integration space, it has clearly defined set of rules. Most of those rules are applicable for Microservices as well. However, the current prominence of Microservice are due to massive Cloud adoption, a need for real time systems in BigData related projects and IoT applications.
 
 The first and foremost attribute of Microservices implementation is to identify the problem domain which can be achieved through Domain Driven Design. Traditional agile software development focus on the Application development practices instead of understanding the problem domain during the initial phase. Development team identifies the task to work on based on User Stories and Use Case aggregation exercise.
 
 In an urge to develop the feature list developers often skip the conversation needed on the shared understanding of the business; instead they favor the technical discussion and jump straight into the implementation, losing an opportunity identify the domain model.
 
-For example a Travel booking site may identify these tasks to perform for a given week for its developers:
+For example a Travel booking site may identify these user stories to perform for a given week for its developers:
 
 1. Allows customer to search based on date and display the results.
 2. Choose from list and performs booking on it.
 3. Once booking is confirmed he will taken to the payment site.
 4. Upon making the payment ticket will be issued.
 
-The development is focussed on application areas. If you look it clearly, those four operation belongs to different domains like:
+The development is focussed on application areas. If you look it clearly, those four tasks belongs to different domains like:
 
 1. Allows customer to search based on date and display the results - `Search`.
-2. From the list customer choose a flight and performs booking on it - `Booking`.
-3. Once booking is confirmed he will taken to the payment site - `Payment`.
-4. Upon making the payment ticket will be issued - `Ticketing`.  
+2. From the list, customer choose a flight and performs booking on it - `Booking`.
+3. Once booking is confirmed, he will taken to the payment site - `Payment`.
+4. Upon making the payment, ticket will be issued - `Ticketing`.  
 
-The conflict between Agile practices and Domain Driven Design is on the agility practices the former plays. During the `requirement gathering` phase identify the Domain and the events occurs on that domain, use those information to derive a bonded context. In an essence, before breaking into User Stories derive the Domain areas to work with. Using method like Impact Mapping, Model Exploration Whirlpool, and Event Storming can formulate Domain. However, lately, it is Event Storming exercise seems to be choice to derive the Domain model as it allows the direct representation of designed events in actual coding. We will discuss for on that later.
+The friction between Agile practices and Domain Driven Design is on the need to be agile and agility practices the former plays. During the `requirement gathering` phase identify the Domain and the events occurs on that domain - use those information to derive a Bounded Context. In an essence, before breaking into User Stories derive the Domain areas to work with. Use the Impact Mapping, Model Exploration Whirlpool, and Event Storming to formulate a Domain. However, lately, it is `Event Storming` seems to be choice to derive the Domain model as it allows the direct representation of designed events in actual coding. We will discuss on that later.
 
 Once the subdomains are represented into  domain model then try to segregate the domain model into three:
 
-* Core domain.
-* Supporting domain.
-* Generic domain.
+* <b>Core subdomain.</b>
+* <b>Supporting subdomain.</b>
+* <b>Generic subdomain.</b>
 
-For any business Core Domain provides the intellectual property or it will be considered its competitive advantage. In a Travel booking application, its Search/Pricing can be considered as the Core Domain whereas Payment/ Notification may be its Supporting Domain. Supporting Domain sole purpose of existence is to support the Core Domain. A Generic domain is isolated from both the core Domain and Supporting Domain and can function independently. An example would be the CustomerSupport subdomain; however to operate as whole business domain, generic domain is inevitable.
+![subdomains]({{ site.url }}/assets/ddesign-subdomain.jpg)
 
-Generally there is a one-to-one mapping between a Domain and Subdomain and they operate on its own Context known as Bounded Context.
-Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. And those Bounded Context will be considered for Microservices.
+For any business `Core subdomain` provides the intellectual property or it will be considered its competitive advantage.
+The maximum focus should be given on `Core subdomain`. Sometimes after Domain modeling, it comes out that there won't be any `Core subdomain`; those `domain(s)` operated on business are merely doing the integration job. In a Travel booking application, its `Search/Pricing` can be considered as the Core Domain. Those two domains may be what provides the `Value Proposition` to their business.
 
-Once Subdomains and Bounded Contexts are identified the next phase would be recognizing the interfaces of the Bounded Context. DDD practitioners call it as Context Map which will lead to a discussion on the integration approach.
+A `Supporting subdomain` primary focus is to support `Core subdomain`. `Core subdomain` can't exist without them but business shouldn't focus much on that. For example Payment domain may depend a third party payment service provider or a Notification domain service may use third party email service to send out emails/sms. So business devoid the necessity to focus much effort on those areas. Nevertheless, their existence is important for the `Core subdomain` to function.
+
+Essentially, a `Generic subdomain` is isolated from both `Core subdomain` and `Supporting subdomain` and can function independently. But to operate as a whole business its presence is inevitable. An example would be the CustomerSupport subdomain. Generally `Generic subdomain` is outsourced or may be a packages/SaaS software.
+
+Generally there is a one-to-one mapping between a Domain model and Subdomain and they operate on its own Context known as Bounded Context. Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. In some cases a Bounded Context may overlap into other subdomains. And Bounded Context will be considered for Microservices.
+
+Once Subdomains and Bounded Contexts are identified the next phase would be recognizing the interfaces of the Bounded Context. DDD call it as Context Map which will lead to a discussion on the integration approach.
 
 The next article will provide more on Bounded Context and Integration among Bounded Contexts.
+
+{% include fb-comments.html %}
+<meta property="fb:app_id"  content="320288511690108"/>
+ {% if site.fbcomments %}
+    <hr/>
+    <h4>Comments</h4>
+    <div class="fb-comments" data-href="http://rajeeshkoroth.com{{ page.url }}" data-colorscheme="dark" data-num-posts="4" data-width="706"></div>
+ {% endif %}
