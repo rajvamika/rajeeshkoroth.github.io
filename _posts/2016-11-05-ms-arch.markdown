@@ -5,41 +5,39 @@ date:   2016-11-03 08:36:28 +0530
 categories: jekyll update
 ---
 
-Microservice is not a new concept. The Unix philosophy of one tool, one job and it does it well. The SOA world has shown the integration of large desperate systems using ESB. The prominence of Microservice are due to the fact that Cloud adoption, need for real time systems like in BigData an IoT projects.
+Microservice is not a new concept. The Unix philosophy of one tool, one job and perform its job well is inherent to its utility tools and commands. The same rules applied to `functions`; an ubiqutous `organization block` since computing; which states that function should be as small as possible and should do only what the `function` name denotes. When SOA and ESB came in integration space, it has clearly defined set of rules. Most of those rules are applicable for Microservices as well. However, the current prominence of Microservice are due to massive Cloud adoption, a need for real time systems in BigData related projects and IoT applications.
 
-The first and foremost attribute of Microservices implementation is to identify the problem domain which can be called as Domain Driven Design. Traditional agile software development focus on the Application development practices rather than understanding the problem domain initially. The developers identifies the task to work on based on User Stories and Use Case aggregation exercise.
+The first and foremost attribute of Microservices implementation is to identify the problem domain which can be achieved through Domain Driven Design. Traditional agile software development focus on the Application development practices instead of understanding the problem domain during the initial phase. Development team identifies the task to work on based on User Stories and Use Case aggregation exercise.
+
+In an urge to develop the feature list developers often skip the conversation needed on the shared understanding of the business; instead they favor the technical discussion and jump straight into the implementation, losing an opportunity identify the domain model.
 
 For example a Travel booking site may identify these tasks to perform for a given week for its developers:
 
 1. Allows customer to search based on date and display the results.
-2. From the list customer choose a flight and performs booking on it.
+2. Choose from list and performs booking on it.
 3. Once booking is confirmed he will taken to the payment site.
 4. Upon making the payment ticket will be issued.
 
-The development is focussed on the application areas. If you look it clearly, those four operation belongs to different domains like:
+The development is focussed on application areas. If you look it clearly, those four operation belongs to different domains like:
 
 1. Allows customer to search based on date and display the results - `Search`.
 2. From the list customer choose a flight and performs booking on it - `Booking`.
 3. Once booking is confirmed he will taken to the payment site - `Payment`.
 4. Upon making the payment ticket will be issued - `Ticketing`.  
 
-The conflict between Agile practices and Domain Driven Design is on the agility practices the former plays with the term - `CHANGE IS THE ONLY CONSTANT`. However, the practices are shown that we are spending enough time with with the business stake holders and it is quite simple to derive the domain areas during those communications. In an essence, before breaking into User Stories and process with the development derive the Domain areas to work with.
+The conflict between Agile practices and Domain Driven Design is on the agility practices the former plays. During the `requirement gathering` phase identify the Domain and the events occurs on that domain, use those information to derive a bonded context. In an essence, before breaking into User Stories derive the Domain areas to work with. Using method like Impact Mapping, Model Exploration Whirlpool, and Event Storming can formulate Domain. However, lately, it is Event Storming exercise seems to be choice to derive the Domain model as it allows the direct representation of designed events in actual coding. We will discuss for on that later.
 
-Using method like Impact Mapping, Model Exploration Whirlpool, and Event Storming can formulate Domain. However, lately, it is Event Storming exercise seems to be choice to derive the Domain model as it allows the direct representation of designed events in actual coding. We will discuss for on that later.
-
-Once the subdomains are represented in to the domain model then try to segregate the domain model in to three:
+Once the subdomains are represented into  domain model then try to segregate the domain model into three:
 
 * Core domain.
 * Supporting domain.
 * Generic domain.
 
-For any business Core Domain provide the intellectual property or it will be considered its competitive advantage. In a Travel booking application, its Search/Pricing can be considered as the Core Domain where as Payment/ Notification may be its Supporting Domain. Supporting Domain sole purpose of existence is to support the Core Domain. A Generic domain is isolated from both the core Domain and Supporting Domain and can function independently. An example would be the CustomerSupport subdomain; however to operate a business domain, generic domain is inevitable.
+For any business Core Domain provides the intellectual property or it will be considered its competitive advantage. In a Travel booking application, its Search/Pricing can be considered as the Core Domain whereas Payment/ Notification may be its Supporting Domain. Supporting Domain sole purpose of existence is to support the Core Domain. A Generic domain is isolated from both the core Domain and Supporting Domain and can function independently. An example would be the CustomerSupport subdomain; however to operate as whole business domain, generic domain is inevitable.
 
-Generally there are one-to-one mapping between a Domain and Subdomain and they operate on its own Context known as Bounded Context.
-Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. And those Bounded Context will be generated as Microservices.
+Generally there is a one-to-one mapping between a Domain and Subdomain and they operate on its own Context known as Bounded Context.
+Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. And those Bounded Context will be taken for Microservices.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Once Subdomains and Bounded Contexts are identified the next phase would be recognizing the interfaces of the Bounded Context. DDD practitioners call it as Context Map which will lead to a discussion on the integration approach.
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+The next article will provide more Bounded context and Integration among Bounded Contexts.
