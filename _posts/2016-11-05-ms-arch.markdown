@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Microservices, DDD, Agile development- What is the connection!"
-date:   2016-11-03 08:36:28 +0530
+date:   2016-11-04 08:36:28 +0530
 categories: jekyll update
 ---
 
@@ -36,8 +36,8 @@ Once the subdomains are represented into  domain model then try to segregate the
 For any business Core Domain provides the intellectual property or it will be considered its competitive advantage. In a Travel booking application, its Search/Pricing can be considered as the Core Domain whereas Payment/ Notification may be its Supporting Domain. Supporting Domain sole purpose of existence is to support the Core Domain. A Generic domain is isolated from both the core Domain and Supporting Domain and can function independently. An example would be the CustomerSupport subdomain; however to operate as whole business domain, generic domain is inevitable.
 
 Generally there is a one-to-one mapping between a Domain and Subdomain and they operate on its own Context known as Bounded Context.
-Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. And those Bounded Context will be taken for Microservices.
+Multiple Bounded Contexts are not uncommon. These Bounded Context can exist its own, in other words it store its own Data and can operate independently. And those Bounded Context will be considered for Microservices.
 
 Once Subdomains and Bounded Contexts are identified the next phase would be recognizing the interfaces of the Bounded Context. DDD practitioners call it as Context Map which will lead to a discussion on the integration approach.
 
-The next article will provide more Bounded context and Integration among Bounded Contexts.
+The next article will provide more on Bounded Context and Integration among Bounded Contexts.

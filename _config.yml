@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Microservice, DDD practices.
+title: Microservices, DDD practices.
 email: rajvamika@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Microservice are self contained,automated systems. Although it has appealing qualities, but the path towards it has painful traps.
@@ -21,7 +21,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rajeeshkoroth.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rajvamika
-github_username:  rajvamika
+linkedin_username: rajeeshkr
 
 # Build settings
 markdown: kramdown
