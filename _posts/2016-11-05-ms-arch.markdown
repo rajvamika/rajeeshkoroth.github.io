@@ -2,13 +2,13 @@
 layout: post
 title:  "Microservices, DDD, Agile development- What is the connection!"
 date:   2016-11-04 08:36:28 +0530
-categories: jekyll update
+categories: jekyll update disqus
 comments: true
 ---
 
 Microservice is not a new concept. The Unix philosophy of one tool, one job and perform its job well is inherent to its utility tools and commands. The same rules applies to `functions`; an ubiqutous `organization block` in programming languages; which states that function should be as small to do one job at a time and should do only what the `function name` denotes. When SOA and ESB came in integration space, it has clearly defined set of rules. Most of those rules are applicable for Microservices as well. However, the current prominence of Microservice are due to massive Cloud adoption, a need for real time systems in BigData related projects and IoT applications.
 
-The first and foremost attribute of Microservices implementation is to identify the problem domain which can be achieved through Domain Driven Design. Traditional agile software development focus on the Application development practices instead of understanding the problem domain during the initial phase. Development team identifies the task to work on based on User Stories and Use Case aggregation exercise.
+The first and foremost attribute of Microservices implementation is to identify the problem domain which can be achieved through Domain Driven Design. Traditional agile software development focus on the Application development practices instead of understanding the problem domain during the initial phase. Development team identifies the task to work based on User Stories and Use Case aggregation exercise.
 
 In an urge to develop the feature list developers often skip the conversation needed on the shared understanding of the business; instead they favor the technical discussion and jump straight into the implementation, losing an opportunity identify the domain model.
 
